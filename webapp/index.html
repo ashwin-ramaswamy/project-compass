@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>📍 Project Compass</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Loading State -->
+    <div id="loading" class="state">
+      <div class="spinner"></div>
+      <p>Loading articles...</p>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty" class="state hidden">
+      <div class="empty-message">
+        <h2>📍</h2>
+        <p>No articles saved yet</p>
+        <p class="hint">Install the Chrome extension to save articles</p>
+      </div>
+    </div>
+
+    <!-- Article Card -->
+    <div id="card" class="state hidden">
+      <!-- Top 25% - Headline & Metadata -->
+      <div class="card-top">
+        <h1 id="headline" class="headline"></h1>
+        <div class="metadata">
+          <span id="counter" class="counter"></span>
+          <span id="timestamp" class="timestamp"></span>
+        </div>
+      </div>
+
+      <!-- Bottom 75% - Compass or Summary -->
+      <div class="card-bottom">
+        <div id="compass-view" class="compass-view">
+          <div class="compass">📍</div>
+          <p class="tap-hint">Tap to summarize</p>
+        </div>
+        <div id="summary-view" class="summary-view hidden">
+          <div class="summary-content">
+            <div class="summary-header">
+              <span class="model-badge">GPT-4o Mini</span>
+            </div>
+            <p id="summary-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
