@@ -35,8 +35,8 @@ async function loadArticles() {
     const response = await fetch(CONFIG.SHEET_URL);
     const data = await response.json();
 
-    if (data && data.articles && data.articles.length > 0) {
-      articles = data.articles.reverse(); // Most recent first
+    if (data && data.urls && data.urls.length > 0) {
+      articles = data.urls.reverse(); // Most recent first
     }
   } catch (error) {
     console.error('Error loading articles:', error);
